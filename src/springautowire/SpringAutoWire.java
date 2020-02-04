@@ -5,6 +5,7 @@
  */
 package springautowire;
 
+import java.util.Locale;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,6 +24,8 @@ public class SpringAutoWire {
         ap.registerShutdownHook();
         Circle c = (Circle) ap.getBean("circle");
         c.draw();
+//        System.out.println(ap.getMessage("point.tostring", new Object[]{"Point:Center", 0, 0}, "default Message", null));
+        System.out.println(ap.getMessage("welcome", null, "default Message", null));
     }
     
 }
