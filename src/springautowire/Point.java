@@ -7,7 +7,6 @@ package springautowire;
 
 /**
  *
- * @author krawler
  */
 public class Point {
     String name;
