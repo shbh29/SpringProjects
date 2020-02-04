@@ -8,8 +8,6 @@ package springautowire;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- *
- * @author krawler
  */
 public class Circle {
     Point center;
