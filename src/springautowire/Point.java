@@ -5,6 +5,10 @@
  */
 package springautowire;
 
+import java.util.Locale;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+
 /**
  *
  */
@@ -12,6 +16,9 @@ public class Point {
     String name;
     int x;
     int y;
+//    @Autowired This works too
+    MessageSource messageSource;
+
 
     public int getX() {
         return x;
@@ -37,9 +44,18 @@ public class Point {
         this.name = name;
     }
 
+    public MessageSource getMessageSource() {
+        return messageSource;
+    }
+
+    @Autowired
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+    
     @Override
     public String toString() {
-        return "Point{" + "name=" + name + ", x=" + x + ", y=" + y + '}';
+        return messageSource.getMessage("point.tostring", new Object[]{"a","b","c"},null,null);
     }
     
     
